@@ -21,7 +21,7 @@ The game concept is simple and can be summed up by a few points.
       to as "Cheese".
 
     - The objective of the player's AI is to run around with each mouse
-      collecting as much cheese as it can while tryin to avoid being
+      collecting as much cheese as it can while trying to avoid being
       devoured by the cat.
     
 So far, the following features have been suggested to improve game play
