@@ -1,0 +1,63 @@
+The VIU AI Challenge's main goal to incorporate more student interaction
+ into the CSCI department. The idea is to host a inter-department
+ programming tournament that will strengthen the connections between
+ students and their peers. The competition is based on a simple
+ video-game. However, instead of participating as a user in the game
+ directly, competitors will design an AI to play the game. Whoever
+ design's the best AI will win the tournament.
+
+The point of this project, is to develop the game to be used in VIU's
+ AI Challenge.
+
+The game concept is simple and can be summed up by a few points.
+
+    - There is a maze.
+
+    - There is one "Cat" controlled by the computer's AI
+
+    - The user's AI controls a team of some number of mice (perhaps 5?)
+
+    - There are reward's placed randomly throughout the maze, referred 
+      to as "Cheese".
+
+    - The objective of the player's AI is to run around with each mouse
+      collecting as much cheese as it can while tryin to avoid being
+      devoured by the cat.
+    
+So far, the following features have been suggested to improve game play
+
+    - The cat moves faster then the mouse, forcing the user's AI to be
+      more strategic.
+
+    - Diversions/sacrifice can be used to maximize cheesy goodness.
+
+    - Small corridors or "mouse holes" the cat cannot squeeze through
+      could be included to give the mouse more options.
+
+    - The cat's speed/AI intelligence could increase over time (or perhaps
+      as a function of cheese) so that the less developed player AI's can
+      still do alright in the beginning.
+    
+
+
+In order to help the user's get started on their AI's, a library of 
+helpful functions could be included in the API. (For example, a
+shortestPath() function to determine the quickest route between two
+objects).
+
+One of the main goals of the Project will be to balance user AI
+complexity potential (the potential for someone's AI to be better than
+someone elses) with the complexity of developing a simple AI. We do not
+want to discourage inexperienced users (first years) from participating,
+so it will be important to make sure a simple AI is not too difficult 
+to design. On the other hand, we do not want the AI's so be so easy to
+optimize that everyone ends up with the same design and performance.
+
+
+It should be noted that anyone who would like to participate in the design
+of the game is welcome to. There are many things that need doing.
+
+For more information, The README file can point you in the right direction.
+
+    
+    
