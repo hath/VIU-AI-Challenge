@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 '''
 wait for connection from player
 main loop:
@@ -24,3 +25,4 @@ while not SHUTDOWN:
     
     SHUTDOWN = True
     
+server.end()
