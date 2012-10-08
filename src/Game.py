@@ -11,7 +11,7 @@ import Map, Server, CatAI
 
 SHUTDOWN = False
 
-map = Map.Map()
+map = Map.generateMap(21, 63)
 server = Server.Server()
 cat = CatAI.CatAI()
 
