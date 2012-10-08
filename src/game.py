@@ -18,10 +18,10 @@ cat = cat_ai.CatAI()
 server.start()
 
 while not SHUTDOWN:
-    server.sendState(lvl)
-    server.getPlayerMoves()
+    server.send_state(lvl)
+    server.get_player_moves()
 
-    cat.getCatMoves(lvl)
+    cat.get_cat_moves(lvl)
     
     SHUTDOWN = True
     

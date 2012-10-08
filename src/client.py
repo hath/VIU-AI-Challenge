@@ -11,12 +11,12 @@ class Client():
         conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         conn.connect((self.host, self.port))
         self.conn = connection.Connection(conn)
-        msg = self.conn.getMessage()
+        msg = self.conn.get_message()
         print msg.decoded
         msg = message.Message()
         msg.encode({'hello':'world'})
-        self.conn.sendMessage(msg)
+        self.conn.send_message(msg)
 
         msg.encode({'moves':[[0,4],[0,5]]})
-        self.conn.sendMessage(msg)
+        self.conn.send_message(msg)
 

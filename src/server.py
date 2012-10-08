@@ -8,27 +8,27 @@ class Server():
         self.host = '127.0.0.1'
 
     def start(self):
-        self.serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.serverSocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        self.serverSocket.bind((self.host, self.port))
-        self.serverSocket.listen(1)
-        conn, self.addr = self.serverSocket.accept()
+        self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        self.server_socket.bind((self.host, self.port))
+        self.server_socket.listen(1)
+        conn, self.addr = self.server_socket.accept()
         self.conn = connection.Connection(conn)
         msg = message.Message()
         msg.encode({'type': 'start', 'param':{'turnLimit':200}})
-        self.conn.sendMessage(msg)
-        msg = self.conn.getMessage()
+        self.conn.send_message(msg)
+        msg = self.conn.get_message()
         print msg.decoded
 
     def end(self):
         self.conn.close()
-        self.serverSocket.close()
+        self.server_socket.close()
 
-    def sendState(self, lvl):
+    def send_state(self, lvl):
         pass
 
-    def getPlayerMoves(self):
-        msg = self.conn.getMessage()
+    def get_player_moves(self):
+        msg = self.conn.get_message()
         print msg.decoded['moves']
 
 

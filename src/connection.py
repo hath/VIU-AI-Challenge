@@ -14,7 +14,7 @@ class Connection():
     Receives a single message, decodes the data and returns a new Message
     object. Discards any data trailing the message delimiter.
     '''
-    def getMessage(self):
+    def get_message(self):
         data = ""
         # Wait until the whole message has arrived
         while True:
@@ -30,7 +30,7 @@ class Connection():
     '''
     Sends a Message object.
     '''
-    def sendMessage(self, msg):
+    def send_message(self, msg):
         self.conn.sendall(msg.encoded + MSG_DELIM)
 
     '''
