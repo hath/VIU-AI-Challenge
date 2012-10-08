@@ -1,8 +1,6 @@
 import socket
 import Connection, Message
 
-BUFFER_SIZE = 1024
-
 class Server():
 
     def __init__(self, port=9989):
@@ -10,21 +8,28 @@ class Server():
         self.host = '127.0.0.1'
 
     def start(self):
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.bind((self.host, self.port))
-        s.listen(1)
-        conn, self.addr = s.accept()
+        self.serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.serverSocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        self.serverSocket.bind((self.host, self.port))
+        self.serverSocket.listen(1)
+        conn, self.addr = self.serverSocket.accept()
         self.conn = Connection.Connection(conn)
+        msg = Message.Message()
+        msg.encode({'type': 'start', 'param':{'turnLimit':200}})
+        self.conn.sendMessage(msg)
         msg = self.conn.getMessage()
-        print msg.decoded['hello']
+        print msg.decoded
 
     def end(self):
         self.conn.close()
+        self.serverSocket.close()
 
     def sendState(self, map):
         pass
 
     def getPlayerMoves(self):
-        pass
+        msg = self.conn.getMessage()
+        print msg.decoded['moves']
+
 
         

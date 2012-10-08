@@ -13,6 +13,11 @@ class Message():
         return self.encoded
 
     def decode(self, data):
+        self.error = False
         self.encoded = data
-        self.decoded = json.loads(data)
+        try:
+            self.decoded = json.loads(data)
+        except ValueError:
+            self.decoded = ""
+
         return self.decoded
