@@ -102,23 +102,40 @@ def printAdjList(screen, L, vertex, refill = False):
                 V.remove(vertex)
             except Exception:
                 pass
-            try:
-                screen.addch(vertex.y - dy + scr_y, vertex.x - dx + scr_x,
-                             terrain[2], curses.color_pair(pair))
-            except Exception:
-                pass
+            else:
+                try:
+                    screen.addch(vertex.y - dy + scr_y, vertex.x - dx + scr_x,
+                                 terrain[2], curses.color_pair(pair))
+                except Exception:
+                    pass
     screen.refresh()
 
 '''
-Dark magic at work here.
+Returns view differential from map to screen as 1 dimensional directional vector
+(integer value). Returned value is to be subtracted from corresponding map 
+point coordinate.
+
+p denotes a centering coordinate on map; m denotes maximum length of map dimension;
+s denotes maximum length of screen dimension.
 '''
 def viewDiff(p, s, m):
+    # Map dimension smaller than screen dimension.
     if m <= s:
         return int((m - s) / 2)
+
+    # Note that from here down, map dimension is greater than or equal to
+    # screen dimension.
+
+    # Center point coordinate is less than half screen dimension.
     elif p < int(s / 2):
         return 0
+
+    # Center point coordinate is more than half way between map dimension
+    # and screen dimension.
     elif p > m - int(s / 2):
         return m - s
+    # Center point coordinate falls at or after half screen dimension or at or before
+    # half way between map dimension and screen dimension .
     return p - int(s / 2)
 
 '''
