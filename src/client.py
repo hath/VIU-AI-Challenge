@@ -1,5 +1,5 @@
 import socket
-import Connection, Message
+import connection, message
 
 class Client():
 
@@ -10,10 +10,10 @@ class Client():
     def start(self):
         conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         conn.connect((self.host, self.port))
-        self.conn = Connection.Connection(conn)
+        self.conn = connection.Connection(conn)
         msg = self.conn.getMessage()
         print msg.decoded
-        msg = Message.Message()
+        msg = message.Message()
         msg.encode({'hello':'world'})
         self.conn.sendMessage(msg)
 

@@ -8,8 +8,8 @@ Description: Functions for map generation. All map_list parameters are assumed
              to be square 2 dimensional lists.
 '''
 import random
-from Terrain import *
-from Vertex import Vertex
+from terrain import *
+from vertex import Vertex
 
 '''
 Accsessors for terrain sample list (see getSample()).

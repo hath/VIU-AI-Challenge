@@ -8,8 +8,8 @@ Description: Quick and dirty curses display interface.
 '''
 import curses
 from collections import namedtuple
-from Vertex import Vertex
-from Terrain import *
+from vertex import Vertex
+from terrain import *
 
 Color_Pair = namedtuple('Color_Pair', ['fgc', 'bgc'])
 

@@ -1,5 +1,5 @@
 import socket
-import Message
+import message
 
 BUFFER_SIZE = 1024
 MSG_DELIM = chr(23)
@@ -23,7 +23,7 @@ class Connection():
                 break
         # Discard anything after the delimiter
         data = data[0:data.find(MSG_DELIM)]
-        msg = Message.Message()
+        msg = message.Message()
         msg.decode(data)
         return msg
 

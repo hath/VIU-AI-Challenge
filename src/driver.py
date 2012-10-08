@@ -6,8 +6,8 @@ Author:  Tristan W. Bonsor
 
 Description: Proof of concept driver for map generation and display.
 '''
-from Map import *
-from Display import *
+from map import *
+from display import *
 
 MAX_H = 21
 MAX_W = 63

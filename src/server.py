@@ -1,5 +1,5 @@
 import socket
-import Connection, Message
+import connection, message
 
 class Server():
 
@@ -13,8 +13,8 @@ class Server():
         self.serverSocket.bind((self.host, self.port))
         self.serverSocket.listen(1)
         conn, self.addr = self.serverSocket.accept()
-        self.conn = Connection.Connection(conn)
-        msg = Message.Message()
+        self.conn = connection.Connection(conn)
+        msg = message.Message()
         msg.encode({'type': 'start', 'param':{'turnLimit':200}})
         self.conn.sendMessage(msg)
         msg = self.conn.getMessage()

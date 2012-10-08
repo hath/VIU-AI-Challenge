@@ -7,13 +7,13 @@ main loop:
     send game state to cat AI
     wait for moves from cat AI
 '''
-import Map, Server, CatAI
+import map, server, cat_ai
 
 SHUTDOWN = False
 
-map = Map.generateMap(21, 63)
-server = Server.Server()
-cat = CatAI.CatAI()
+map = map.generateMap(21, 63)
+server = server.Server()
+cat = cat_ai.CatAI()
 
 server.start()
 
