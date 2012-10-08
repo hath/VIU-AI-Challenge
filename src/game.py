@@ -7,21 +7,21 @@ main loop:
     send game state to cat AI
     wait for moves from cat AI
 '''
-import map, server, cat_ai
+import level, server, cat_ai
 
 SHUTDOWN = False
 
-map = map.generateMap(21, 63)
+lvl = level.generateLevel(21, 63)
 server = server.Server()
 cat = cat_ai.CatAI()
 
 server.start()
 
 while not SHUTDOWN:
-    server.sendState(map)
+    server.sendState(lvl)
     server.getPlayerMoves()
 
-    cat.getCatMoves(map)
+    cat.getCatMoves(lvl)
     
     SHUTDOWN = True
     

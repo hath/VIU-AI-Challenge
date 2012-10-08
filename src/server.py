@@ -24,7 +24,7 @@ class Server():
         self.conn.close()
         self.serverSocket.close()
 
-    def sendState(self, map):
+    def sendState(self, lvl):
         pass
 
     def getPlayerMoves(self):
