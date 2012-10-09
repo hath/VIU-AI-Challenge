@@ -1,0 +1,55 @@
+The first prototype will be written in python.
+
+Python provides a good language for the user's to write there AI's
+because Python is a very forgiving language. In addition, there are
+many graph theory libraries available that will make designing the map
+a lot easier. 
+
+The plan is to quickly develop a prototype in python and then to iterate
+from there.
+
+We will create an abstraction of the game by splitting up the map, cheese
+, cat and mice into separate objects that interact with each other.
+
+From here, the first step for us is to decide on the data structures to
+be used for the map.
+
+Ideas for the map so far:
+    - the map will be cell-based, where each cell contains either a wall,
+      floor tile, cat, cheese, mouse, etc.
+    - Random map generation in a controlled manner.
+    - The map should be connected (there exists a path from a to b for all
+      points a,b on the map)
+    - The map should minimize bridges?
+    - Open spaces in the map may be used to make the game more difficult
+      as it will be easier for the cat to manoeuvre.
+
+Ideas for implementing the map included vertex lists and an adjacency matrix
+
+Ideas for implementing the cat/cheese still need to be discussed.
+
+Fog of War was considered as a feature, but it is not a high priority item.
+
+
+THINGS TO DO:
+
+0. Set out some specifications that we must adhere to.
+
+1. Decide on data structures for our objects
+
+2. Design the Topology (mice/cheese/cat/map layout)
+
+3. Event scheduling (Computer/Player AI movement, cheese generation etc.)
+
+4. Divide and Conquer (who is responsible for what?)
+
+5. Code!!!
+
+
+
+This file will be updated as more decisions about the design are made.
+
+
+
+
+
