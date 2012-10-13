@@ -14,18 +14,25 @@ class Server():
         self.server_socket.listen(1)
         conn, self.addr = self.server_socket.accept()
         self.conn = connection.Connection(conn)
+
         msg = message.Message()
         msg.encode({'type': 'start', 'param':{'turnLimit':200}})
         self.conn.send_message(msg)
+
         msg = self.conn.get_message()
         print msg.decoded
 
     def end(self):
+        msg = message.Message()
+        msg.encode({'game_status':'over'})
+        self.conn.send_message(msg)
         self.conn.close()
         self.server_socket.close()
 
     def send_state(self, lvl):
-        pass
+        msg = message.Message()
+        msg.encode({'game_status':'running', 'map':lvl})
+        self.conn.send_message(msg)
 
     def get_player_moves(self):
         msg = self.conn.get_message()

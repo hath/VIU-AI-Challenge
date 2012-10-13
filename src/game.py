@@ -7,7 +7,9 @@ main loop:
     send game state to cat AI
     wait for moves from cat AI
 '''
-import level, server, cat_ai
+import server
+import level
+import cat_ai
 
 SHUTDOWN = False
 
@@ -24,5 +26,5 @@ while not SHUTDOWN:
     cat.get_cat_moves(lvl)
     
     SHUTDOWN = True
-    
+
 server.end()
